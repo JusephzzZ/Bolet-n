@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Notas.Css">
+    <title>Notas</title>
+</head>
+<body>
+    <h1>Bienvenido a tu boletín estudiantil</h1>
+    <h2>Alumno: Juseph David Ibarra Barios</h2>
+    <h3>Notas:</h3>
+    <ul>
+        <li>4.6</li>
+        <li>3.3</li>
+        <li>3.8</li>
+        <li>5.0</li>
+    </ul>
+
+    <h4>Promedio:</h4><div id="promedio"></div>
+    <button type="button" onclick="calcularPromedio()">Calcular Promedio</button>
+
+    <h4>Nota más alta:</h4><div id="nota_alta"></div>
+    <button type="button" onclick="calcularNotaAlta()">Calcular la Nota Más Alta</button>
+
+    <h4>Nota más baja:</h4><div id="nota_baja"></div>
+    <button type="button" onclick="calcularNotaBaja()">Calcular la Nota Más Baja</button>
+
+    <h4>Estado:</h4><div id="estado"></div>
+    <button type="button" onclick="estado()">Calcular</button>
+
+    <script>
+        function calcularPromedio() {
+            let notas = [4.6, 3.3, 3.8, 5.0];
+            let promedio = notas.reduce((a, b) => a + b) / notas.length;
+            document.getElementById("promedio").textContent = promedio.toFixed(1);
+        }
+        
+        function calcularNotaAlta() {
+            let notas = [4.6, 3.3, 3.8, 5.0];
+            let notaAlta = Math.max(...notas);
+            document.getElementById("nota_alta").textContent = notaAlta.toFixed(1);
+        }
+        
+        function calcularNotaBaja() {
+            let notas = [4.6, 3.3, 3.8, 5.0];
+            let notaBaja = Math.min(...notas);
+            document.getElementById("nota_baja").textContent = notaBaja.toFixed(1);
+        }
+
+        function estado() {
+            let notas = [4.6, 3.3, 3.8, 5.0];
+            let promedio = notas.reduce((a, b) => a + b) / notas.length;
+            let mensaje = promedio >= 3.0 ? "Aprobado" : "Desaprobado";
+            document.getElementById("estado").textContent = mensaje;
+        }
+    </script>
+</body>
+</html>
+
+
+
